@@ -1,0 +1,38 @@
+# Running the server (independently)
+npm run dev
+
+# Setting env variables in powershell
+$env:MONGO_HOST = 'localhost'
+$env:MONGO_PORT = '27017'
+$env:MONGO_USER = 'user'
+$env:MONGO_PASSWORD = 'hunter2'
+$env:MONGO_DATABASE = 'spotify'
+$env:MONGO_DB_NAME = 'spotify'
+$env:MONGO_ROOT_USER = 'root'
+$env:MONGO_ROOT_PASSWORD = 'hunter2'
+$env:MONGO_INITDB_DATABASE = 'spotify'
+$env:REDIS_PASSWORD = 'hunter2'
+
+# Print all env variables in powershell
+Get-ChildItem Env:
+
+# Creating docker network
+docker network create mongo-net
+
+# Creating docker volume
+docker volume create mongo-vol
+
+# Inspecting the docker volume
+docker volume inspect mongo-vol
+
+# Running the redis-server
+docker run -d --name redis-server -p 6379:6379 redis:latest --requirepass hunter2
+
+# Running the mongo-server
+docker run -d --name mongo-server -v mongo-vol:/data/db -p 27017:27017 --network mongo-net -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=hunter2 mongo
+
+# Running temporary mongo-server
+docker run -it -v mongo-vol --network mongo-net mongo mongo --host mongo-server --username root --password hunter2 --authenticationDatabase admin
+
+# Running the rabbitmq server
+docker run -d --name rabbitmq-server -p 5672:5672 -p 15672:15672 rabbitmq:management

@@ -1,0 +1,1024 @@
+{
+	"info": {
+		"_postman_id": "e5014734-1514-4579-9cb4-7023c41bc8c7",
+		"name": "Spotify API Tests 2 Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users/{userID}",
+					"item": [
+						{
+							"name": "Fetch user's information",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjMwMTM0MjMsImV4cCI6MTYyMzA5OTgyM30.rODuoxSoky0txKlwRCnRi92VFC4Rh5E9J2kyIIIlcDM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:userID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userID"
+									],
+									"variable": [
+										{
+											"key": "userID",
+											"value": "60bd13646c4d3c2fb8078c02"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fetch user's followers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkMTAzNzY3N2NmYTU0ODRjMzI0YWIiLCJpYXQiOjE2MjMwMDMyODQsImV4cCI6MTYyMzA4OTY4NH0.6cCjfRrbV-JKTQViIVKNUMsxX5C5kqh1FWhijrBrEkI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:userid/followers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userid",
+										"followers"
+									],
+									"variable": [
+										{
+											"key": "userid",
+											"value": "60bd1037677cfa5484c324ab"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fetch user's following",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkMTAzNzY3N2NmYTU0ODRjMzI0YWIiLCJpYXQiOjE2MjMwMDMyODQsImV4cCI6MTYyMzA4OTY4NH0.6cCjfRrbV-JKTQViIVKNUMsxX5C5kqh1FWhijrBrEkI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:userid/following",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userid",
+										"following"
+									],
+									"variable": [
+										{
+											"key": "userid",
+											"value": "60bd1037677cfa5484c324ab"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Follow a user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkMTAzNzY3N2NmYTU0ODRjMzI0YWIiLCJpYXQiOjE2MjMwMDMyODQsImV4cCI6MTYyMzA4OTY4NH0.6cCjfRrbV-JKTQViIVKNUMsxX5C5kqh1FWhijrBrEkI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"followingId\": \"60bd13646c4d3c2fb8078c02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userid/follow",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userid",
+										"follow"
+									],
+									"variable": [
+										{
+											"key": "userid",
+											"value": "60bd1037677cfa5484c324ab"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unfollow a user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkMTAzNzY3N2NmYTU0ODRjMzI0YWIiLCJpYXQiOjE2MjMwMDMyODQsImV4cCI6MTYyMzA4OTY4NH0.6cCjfRrbV-JKTQViIVKNUMsxX5C5kqh1FWhijrBrEkI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"followingId\": \"60bd13646c4d3c2fb8078c02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userid/unfollow",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userid",
+										"unfollow"
+									],
+									"variable": [
+										{
+											"key": "userid",
+											"value": "60bd1037677cfa5484c324ab"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add a new user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBidXNpbmVzc2VzLmNvbSIsImlhdCI6MTYyMTIwNDgxNywiZXhwIjoxNjIxMjkxMjE3fQ.eeh48txlQGrhesE8hoXeMiz9GpcDguSzrC5Gyvu6lcg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Han Solo\",\r\n    \"username\" : \"shootFirst123\",\r\n    \"email\" : \"iknow@gmail.com\",\r\n    \"password\" : \"hunter2\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login as user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shootFirst123\",\r\n    \"password\": \"hunter2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "songs",
+			"item": [
+				{
+					"name": "{song ID}",
+					"item": [
+						{
+							"name": "Fetch data for a specific song.",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/songs/:songID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"songs",
+										":songID"
+									],
+									"variable": [
+										{
+											"key": "songID",
+											"value": "60bebacc9c74263a306ec952"
+										}
+									]
+								},
+								"description": "Returns complete data for a the photo specified by `photoID`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Fetch song stream",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/songs/:songID/stream",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"songs",
+										":songID",
+										"stream"
+									],
+									"variable": [
+										{
+											"key": "songID",
+											"value": "60bebacc9c74263a306ec952"
+										}
+									]
+								},
+								"description": "Returns complete data for a the photo specified by `photoID`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Update data for a specific song.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0cmlzdGFuQG5ld21vcm5pbmdiYWtlcnkuY29tIiwiaWF0IjoxNjIxMTk0NTc5LCJleHAiOjE2MjEyODA5Nzl9.q0T-VLlP7v6RTU8ciajLbjeqhPdl6l7bQaKi17i-X0E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Green Hands\",\n    \"album\" : \"DarkSide\",\n    \"artist\" : \"Lil Grogu\",\n    \"streams\" : \"75625\"\n  }"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/songs/:songID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"songs",
+										":songID"
+									],
+									"variable": [
+										{
+											"key": "songID",
+											"value": "60bd47b14664e02d8434c5de"
+										}
+									]
+								},
+								"description": "Replaces the data for the photo specified by `photo`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Remove a specific song from the database.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0cmlzdGFuQG5ld21vcm5pbmdiYWtlcnkuY29tIiwiaWF0IjoxNjIxMTk0NTc5LCJleHAiOjE2MjEyODA5Nzl9.q0T-VLlP7v6RTU8ciajLbjeqhPdl6l7bQaKi17i-X0E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/songs/:songID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"songs",
+										":songID"
+									],
+									"variable": [
+										{
+											"key": "songID",
+											"value": "60bd480f32f7505790c441d9"
+										}
+									]
+								},
+								"description": "Completely removes the data for the photo specified by `photoID`.\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "media/(filename)",
+					"item": [
+						{
+							"name": "Fetch song download",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/songs/media/:filename",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"songs",
+										"media",
+										":filename"
+									],
+									"variable": [
+										{
+											"key": "filename",
+											"value": "60bebacc9c74263a306ec952.mpeg"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add a new song",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkNjU1MGFlMDAwYzljMDM2OGJkZjciLCJpYXQiOjE2MjMxMDkxMjYsImV4cCI6MTYyMzE5NTUyNn0.zY015SumhTXer_t5Q9S0rjrukEct46ceY3AyC1qHBcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "song",
+									"type": "file",
+									"src": "WqB3IrisH/11 Cantina Band.mp3"
+								},
+								{
+									"key": "name",
+									"value": "Cantina Band",
+									"type": "text"
+								},
+								{
+									"key": "album",
+									"value": "Star Wars: The Ultimate Soundtrack Collection",
+									"type": "text"
+								},
+								{
+									"key": "artist",
+									"value": "John Williams",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/songs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"songs"
+							]
+						},
+						"description": "Creates a new review with specified data and adds it to the application's database.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "playlists",
+			"item": [
+				{
+					"name": "{[playllst ID}",
+					"item": [
+						{
+							"name": "Fetch data for a specific playlist.",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/:playlistID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										":playlistID"
+									],
+									"variable": [
+										{
+											"key": "playlistID",
+											"value": "60bea6eacfeded151c210943"
+										}
+									]
+								},
+								"description": "Returns complete data for a the review specified by `reviewID`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Add a song to playlist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkNjU1MGFlMDAwYzljMDM2OGJkZjYiLCJpYXQiOjE2MjMxMDYyNTUsImV4cCI6MTYyMzE5MjY1NX0.jRoqs_cEGQ_HJvpfplFo3xpixBvDzx4X3el6RmhwPUU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"songID\": \"60bea81bcfeded151c210944\" }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/:playlistID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										":playlistID"
+									],
+									"variable": [
+										{
+											"key": "playlistID",
+											"value": "60bea6eacfeded151c210943"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove a playlist from the database.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkNjU1MGFlMDAwYzljMDM2OGJkZjYiLCJpYXQiOjE2MjMxMDYyNTUsImV4cCI6MTYyMzE5MjY1NX0.jRoqs_cEGQ_HJvpfplFo3xpixBvDzx4X3el6RmhwPUU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/:playlistID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										":playlistID"
+									],
+									"variable": [
+										{
+											"key": "playlistID",
+											"value": "60bea5e4cfeded151c210942"
+										}
+									]
+								},
+								"description": "Completely removes the data for the review specified by `reviewID`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Like playlist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGMwMTk0YjZjNmQ0YzAyYjM4YTU5YmIiLCJpYXQiOjE2MjMzNTExMDEsImV4cCI6MTYyMzQzNzUwMX0.v1WiCjPfkdhW_WSALmFO06Y1kWgBSfU0z1fU5-Id2DE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"60c0194b6c6d4c02b38a59bb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/:playlistID/liked",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										":playlistID",
+										"liked"
+									],
+									"variable": [
+										{
+											"key": "playlistID",
+											"value": "60c15da9d7bd2316803b4010"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unlike playlist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGMwMTk0YjZjNmQ0YzAyYjM4YTU5YmIiLCJpYXQiOjE2MjMzNTExMDEsImV4cCI6MTYyMzQzNzUwMX0.v1WiCjPfkdhW_WSALmFO06Y1kWgBSfU0z1fU5-Id2DE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"60c0194b6c6d4c02b38a59bb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/:playlistID/unliked",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										":playlistID",
+										"unliked"
+									],
+									"variable": [
+										{
+											"key": "playlistID",
+											"value": "60c15da9d7bd2316803b4010"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Remove a song from a playlist Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGMwMDMwZmQ0Zjk0Y2JmMjg4ZTBlZGYiLCJpYXQiOjE2MjMxOTg0NTUsImV4cCI6MTYyMzI4NDg1NX0.YXAC860CKijhvzigKawlWg20RK5tzCfweFNd-hOzy-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/playlists/:playlistID/:songID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"playlists",
+								":playlistID",
+								":songID"
+							],
+							"variable": [
+								{
+									"key": "playlistID",
+									"value": "60c00d050c372b4f409e9296"
+								},
+								{
+									"key": "songID",
+									"value": "60c00521b568674ac887292c"
+								}
+							]
+						},
+						"description": "Completely removes the data for the review specified by `reviewID`.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new playlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGJkNjU1MGFlMDAwYzljMDM2OGJkZjYiLCJpYXQiOjE2MjMxMDYyNTUsImV4cCI6MTYyMzE5MjY1NX0.jRoqs_cEGQ_HJvpfplFo3xpixBvDzx4X3el6RmhwPUU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\" : \"Boba's Beats\" }"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/playlists",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"playlists"
+							]
+						},
+						"description": "Creates a new review with specified data and adds it to the application's database.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "artists",
+			"item": [
+				{
+					"name": "artists/{artistID}",
+					"item": [
+						{
+							"name": "Fetch data for a specific artist.",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/artists/:artistID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"artists",
+										":artistID"
+									],
+									"variable": [
+										{
+											"key": "artistID",
+											"value": ""
+										}
+									]
+								},
+								"description": "Returns complete data for a the review specified by `reviewID`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Update data for a specific artist.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0cmlzdGFuQG5ld21vcm5pbmdiYWtlcnkuY29tIiwiaWF0IjoxNjIxMTk0NTc5LCJleHAiOjE2MjEyODA5Nzl9.q0T-VLlP7v6RTU8ciajLbjeqhPdl6l7bQaKi17i-X0E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Lil Grogu4\",\n    \"bio\": \"I'm adorable\",\n    \"monthlyListeners\": \"9001\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/artists/:artistID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"artists",
+										":artistID"
+									],
+									"variable": [
+										{
+											"key": "artistID",
+											"value": ""
+										}
+									]
+								},
+								"description": "Replaces the data for the review specified by `review`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Remove an artist from the database.",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/artists/:artistID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"artists",
+										":artistID"
+									],
+									"variable": [
+										{
+											"key": "artistID",
+											"value": "60bd2d330367c93f54512851"
+										}
+									]
+								},
+								"description": "Completely removes the data for the review specified by `reviewID`.\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Like artist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGMwMTk0YjZjNmQ0YzAyYjM4YTU5YmIiLCJpYXQiOjE2MjMzNTExMDEsImV4cCI6MTYyMzQzNzUwMX0.v1WiCjPfkdhW_WSALmFO06Y1kWgBSfU0z1fU5-Id2DE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"60c0194b6c6d4c02b38a59bb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/artists/:artistID/liked",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"artists",
+										":artistID",
+										"liked"
+									],
+									"variable": [
+										{
+											"key": "artistID",
+											"value": "60be810001e24d5741da04eb"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unlike artist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGMwMTk0YjZjNmQ0YzAyYjM4YTU5YmIiLCJpYXQiOjE2MjMzNTExMDEsImV4cCI6MTYyMzQzNzUwMX0.v1WiCjPfkdhW_WSALmFO06Y1kWgBSfU0z1fU5-Id2DE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"60c0194b6c6d4c02b38a59bb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/artists/:artistID/unliked",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"artists",
+										":artistID",
+										"unliked"
+									],
+									"variable": [
+										{
+											"key": "artistID",
+											"value": "60be810001e24d5741da04eb"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add a new artist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Lil Grogu2\",\n    \"bio\" : \"I'm adorable\",\n    \"monthlyListeners\" : \"9001\"\n  }"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/artists",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artists"
+							]
+						},
+						"description": "Creates a new review with specified data and adds it to the application's database.\n"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
